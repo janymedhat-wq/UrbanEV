@@ -1,7 +1,7 @@
 <!--
 This is a single-file, minimalist landing page for "UrbanEV."
 It focuses on a clean, light-theme design, easy navigation, and includes a subtle load-in effect.
-Dark mode functionality has been removed.
+The main Call to Action (CTA) now links directly to the uploaded Pitch Deck PDF.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -94,23 +94,31 @@ Dark mode functionality has been removed.
         </div>
     </header>
 
-    <!-- Main Content Area / Hero Section (Clean and Concise) -->
+    <!-- Main Content Area / Hero Section (Focusing on Investment/Mission) -->
     <main class="main-content flex items-center justify-center p-6 md:p-12 hero-animation fade-in-on-load">
         <div class="text-center max-w-4xl">
-            <!-- Hero Title -->
+            <!-- Hero Title Adjusted -->
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-gray-900">
-                Electrifying Urban Mobility in <span class="text-green-600">Pakistan.</span>
+                Join the Mobility Revolution in <span class="text-green-600">Pakistan.</span>
             </h1>
 
-            <!-- Hero Subtitle (The core idea, without the lengthy mission text) -->
+            <!-- Hero Subtitle -->
             <p class="text-lg md:text-2xl font-medium text-gray-500 mb-10">
                 Building lightweight, solar-assisted electric vehicles designed for local innovation and a sustainable future.
             </p>
 
-            <!-- Call to Action -->
-            <button class="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-xl hover:bg-green-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 text-base md:text-lg">
-                Discover Our Vehicles
-            </button>
+            <!-- New CTA: Link to Pitch Deck PDF -->
+            <a href="urbanEV pitch deck.pdf" download="UrbanEV_Pitch_Deck.pdf" class="inline-block group">
+                <button class="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-xl group-hover:bg-green-700 transition duration-300 transform group-hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 text-base md:text-lg flex items-center justify-center space-x-2">
+                    <!-- PDF Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M11.54 22.351A8.252 8.252 0 0 1 12 22.5c2.257 0 4.39-.785 6.04-2.149a.75.75 0 0 0-.007-1.121C16.892 18.9 14.773 18 12 18s-4.892.9-6.033 2.229a.75.75 0 0 0-.007 1.121Zm6.002-17.701c.792.183 1.48.513 2.053.968a.75.75 0 0 1-.795 1.192 6.786 6.786 0 0 0-1.57-.615.75.75 0 0 1-.689-1.325Z" clip-rule="evenodd" />
+                        <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm.75-10.75v5.5a.75.75 0 0 1-1.5 0v-5.5a.75.75 0 0 1 1.5 0Z" />
+                        <path d="M10.15 8.947a.75.75 0 0 0-.154.543l.86 4.618a.75.75 0 0 0 1.478-.275l-.86-4.618a.75.75 0 0 0-1.294.132Z" />
+                    </svg>
+                    <span>Download Pitch Deck (PDF)</span>
+                </button>
+            </a>
         </div>
     </main>
 
@@ -211,9 +219,8 @@ Dark mode functionality has been removed.
     <!-- Footer -->
     <footer id="contact" class="mt-auto p-4 md:p-6 bg-white border-t border-gray-200 transition-colors duration-500">
         <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
-            &copy; 2025 UrbanEV. Building sustainable, clean, and amazing long-term mobility. Medhat ullah
+            &copy; 2024 UrbanEV. Building sustainable, clean, and amazing long-term mobility.
         </div>
     </footer>
 </body>
-
 </html>

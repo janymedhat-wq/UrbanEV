@@ -1,0 +1,218 @@
+<!--
+This is a single-file, minimalist landing page for "UrbanEV."
+It focuses on a clean, light-theme design, easy navigation, and includes a subtle load-in effect.
+Dark mode functionality has been removed.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanEV | Clean Urban Mobility</title>
+    
+    <!-- Load Tailwind CSS (no configuration needed since dark mode is removed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for a cleaner look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9fafb; /* Light Gray Background */
+            color: #1f2937; /* Dark Gray Text */
+        }
+        
+        .main-content {
+            flex-grow: 1;
+        }
+
+        /* ------------------------------------------- */
+        /* CSS for the Load-In/Simulate Effect (requested) */
+        /* ------------------------------------------- */
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-on-load {
+            opacity: 0; /* Start hidden */
+            /* Use a smooth easing curve for the animation */
+            animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+        }
+
+        /* Animate sections sequentially for a nice effect */
+        .header-animation {
+            animation-delay: 0.1s;
+        }
+        .hero-animation {
+            animation-delay: 0.3s;
+        }
+        .section-animation-1 {
+            animation-delay: 0.6s;
+        }
+        .section-animation-2 {
+            animation-delay: 0.9s;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="header-animation fade-in-on-load p-4 md:p-8 border-b border-gray-200 bg-white shadow-sm transition-colors duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-xl md:text-2xl font-black tracking-tighter text-gray-900">
+                Urban<span class="text-green-600">EV</span>
+            </div>
+
+            <!-- Main Nav (Clean and Easy to Navigate) -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                <a href="#tech" class="hover:text-green-600 transition duration-300">Technology</a>
+                <a href="#careers" class="hover:text-green-600 transition duration-300">Careers</a>
+                <a href="#contact" class="hover:text-green-600 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Theme Toggle removed) -->
+            <div class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500 hover:text-green-600 cursor-pointer transition duration-150" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 border-t mt-4 border-gray-200">
+            <nav class="flex flex-col space-y-2 text-sm font-medium text-gray-600">
+                <a href="#tech" class="p-2 hover:bg-gray-100 rounded-md transition duration-150">Technology</a>
+                <a href="#careers" class="p-2 hover:bg-gray-100 rounded-md transition duration-150">Careers</a>
+                <a href="#contact" class="p-2 hover:bg-gray-100 rounded-md transition duration-150">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area / Hero Section (Clean and Concise) -->
+    <main class="main-content flex items-center justify-center p-6 md:p-12 hero-animation fade-in-on-load">
+        <div class="text-center max-w-4xl">
+            <!-- Hero Title -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-gray-900">
+                Electrifying Urban Mobility in <span class="text-green-600">Pakistan.</span>
+            </h1>
+
+            <!-- Hero Subtitle (The core idea, without the lengthy mission text) -->
+            <p class="text-lg md:text-2xl font-medium text-gray-500 mb-10">
+                Building lightweight, solar-assisted electric vehicles designed for local innovation and a sustainable future.
+            </p>
+
+            <!-- Call to Action -->
+            <button class="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-xl hover:bg-green-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 text-base md:text-lg">
+                Discover Our Vehicles
+            </button>
+        </div>
+    </main>
+
+    <!-- Core Innovation Section -->
+    <section id="tech" class="py-16 bg-white border-t border-gray-200 section-animation-1 fade-in-on-load">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Core Innovation: Solar + Electric</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1: Solar Integration -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg transition duration-300 border border-green-100 hover:border-green-300">
+                    <div class="text-green-600 mb-3">
+                        <!-- Sun Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.674 6.641a.75.75 0 0 1 .53-.22h.001c.205 0 .409.117.525.324l2.583 4.673a.75.75 0 0 0 1.341 0l2.582-4.673a.75.75 0 0 1 1.25-.86c.018.02.035.04.051.062a7.5 7.5 0 1 1-1.077 11.235.75.75 0 0 0 .805.158 9.001 9.001 0 1 0-11.838-11.838.75.75 0 0 0 .158.805Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Solar-Assisted Charging</h3>
+                    <p class="text-gray-600">Optimizing battery life and range by integrating auxiliary solar power for daily top-ups and standby energy efficiency.</p>
+                </div>
+
+                <!-- Feature 2: Lightweight Design -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg transition duration-300 border border-green-100 hover:border-green-300">
+                    <div class="text-green-600 mb-3">
+                        <!-- Feather Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                            <path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h.211c.552 0 1.07.288 1.432.748L8.791 5.9a3.75 3.75 0 0 0 3.197 2.016h.047a.75.75 0 0 0 .736-.62l.142-.71c.08-.4-.066-.827-.386-1.073a4.77 4.77 0 0 1 2.316-1.393.75.75 0 0 1 .581.352 6.75 6.75 0 0 0 3.064 3.064.75.75 0 0 1 .351.581 4.77 4.77 0 0 1-1.393 2.316.75.75 0 0 0-1.073-.386l-.71.142c-.328.065-.589.33-.62.62h-.047a3.75 3.75 0 0 0-2.016 3.197l.748 1.549c.46.953.218 2.091-.637 2.768a11.16 11.16 0 0 1-7.9 3.084 11.16 11.16 0 0 1-7.9-3.084c-.855-.677-1.097-1.815-.637-2.768l.748-1.549a3.75 3.75 0 0 0 2.016-3.197h.047c.29-.03.555-.291.62-.62l.142-.71c.328-.163.755.082 1.073.386a4.77 4.77 0 0 1 2.316 1.393.75.75 0 0 1 .581-.352 6.75 6.75 0 0 0 3.064-3.064.75.75 0 0 1 .351-.581 4.77 4.77 0 0 1 2.316 1.393.75.75 0 0 0 1.073.386l.71-.142c.33.065.591.33.62.62h.047a3.75 3.75 0 0 0 2.016 3.197l.748 1.549c.46.953.218 2.091-.637 2.768a11.16 11.16 0 0 1-7.9 3.084 11.16 11.16 0 0 1-7.9-3.084c-.855-.677-1.097-1.815-.637-2.768l.748-1.549a3.75 3.75 0 0 0 2.016-3.197h.047Z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Lightweight & Efficient</h3>
+                    <p class="text-gray-600">A focus on minimal material use and a lighter chassis maximizes efficiency, critical for urban environments and range.</p>
+                </div>
+
+                <!-- Feature 3: Modular Battery System -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg transition duration-300 border border-green-100 hover:border-green-300">
+                    <div class="text-green-600 mb-3">
+                        <!-- Battery/Modular Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                            <path fill-rule="evenodd" d="M2.515 10.674v3.313A3 3 0 0 0 5.82 17.001h.691v-.748c0-.441.36-.799.801-.799h4.37c.441 0 .801.358.801.799v.748h.69A3 3 0 0 0 18.485 13.987v-3.313A3 3 0 0 0 15.467 7.66H8.533A3 3 0 0 0 5.515 10.674Zm8.483-3.076a.75.75 0 0 0-1.071-.975L7.962 8.783a.75.75 0 0 0 1.071.974l1.965-2.071ZM15.038 8.783a.75.75 0 0 0 1.071-.974l-1.485-1.583a.75.75 0 1 0-1.071.975l1.485 1.583Z" clip-rule="evenodd" />
+                            <path d="M12.75 21.001h-1.5c-.414 0-.75-.336-.75-.75v-3c0-.414.336-.75.75-.75h1.5c.414 0 .75.336.75.75v3c0 .414-.336.75-.75.75Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Modular Battery System</h3>
+                    <p class="text-gray-600">Designed for future-proofing and easy maintenance, ensuring rapid repair and integration of updated technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section id="careers" class="py-20 bg-gray-50 transition-colors duration-500 border-t border-gray-200 section-animation-2 fade-in-on-load">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Join the UrbanEV Team</h2>
+            <p class="text-center text-gray-500 mb-12">Innovate with us in developing Pakistan's next generation of sustainable mobility.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Role 1: Mechatronics Engineer -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-green-500/30 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-extrabold mb-2 text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM9.75 9.75c0-.414.336-.75.75-.75h2.25a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-2.19l-.97.97a.75.75 0 1 1-1.06-1.06Z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M15.545 15.045a.75.75 0 0 0-.012 1.068l1.474 1.473-.393.394a.75.75 0 1 0 1.06 1.06l.394-.393 1.473 1.474a.75.75 0 1 0 1.06-1.06Z" clip-rule="evenodd" />
+                        </svg>
+                        Mechatronics Engineer
+                    </h3>
+                    <p class="text-gray-600">Design and implement integrated mechanical, electrical, and control systems for our swappable battery units and charging stations.</p>
+                    <a href="#contact" class="mt-4 inline-block text-sm font-semibold text-green-600 hover:text-green-800 transition">Apply Now &rarr;</a>
+                </div>
+
+                <!-- Role 2: Software Engineer -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-green-500/30 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-extrabold mb-2 text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2">
+                            <path d="M10.25 2.75h3.5c.414 0 .75.336.75.75v.75H9.5V3.5c0-.414.336-.75.75-.75Z" />
+                            <path fill-rule="evenodd" d="M4.383 6.07A2.25 2.25 0 0 1 6.51 4.5h10.98a2.25 2.25 0 0 1 2.127 1.57l-.027.06-.021.047a2.26 2.26 0 0 0-.291.564l-.447 1.118a.75.75 0 0 1-.955.324L17.25 8.25h-3.5a.75.75 0 0 1-.75-.75V6.75h-2.5V7.5c0 .414-.336.75-.75.75h-3.5l-.04.015a.75.75 0 0 1-.955-.324L4.704 6.68a2.26 2.26 0 0 0-.291-.563l-.02-.047-.028-.06Zm-.75 3a.75.75 0 0 1 0-1.5h16.75c.414 0 .75.336.75.75a.75.75 0 0 1-.75.75H3.633Zm.006 3.75a.75.75 0 0 1 .744-.698h15.234a.75.75 0 0 1 0 1.5H4.383a.75.75 0 0 1-.744-.802Zm.006 3.75a.75.75 0 0 1 .744-.802h15.234a.75.75 0 0 1 0 1.5H4.383a.75.75 0 0 1-.744-.698Z" clip-rule="evenodd" />
+                        </svg>
+                        Software Engineer
+                    </h3>
+                    <p class="text-gray-600">Develop intelligent charging network software and vehicle telematics systems using modern cloud and embedded technologies.</p>
+                    <a href="#contact" class="mt-4 inline-block text-sm font-semibold text-green-600 hover:text-green-800 transition">Apply Now &rarr;</a>
+                </div>
+
+                <!-- Role 3: Vehicle Engineer -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-green-500/30 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-extrabold mb-2 text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2">
+                            <path fill-rule="evenodd" d="M7.5 6a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5ZM16.5 6a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5ZM18.75 16.5a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0v-3ZM15.75 12h-7.5a.75.75 0 0 0-.75.75v7.5c0 .414.336.75.75.75h7.5a.75.75 0 0 0 .75-.75v-7.5a.75.75 0 0 0-.75-.75ZM.75 18a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V18a.75.75 0 0 0-.75.75v2.25a.75.75 0 0 1-1.5 0V18ZM17.25 18a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V18a.75.75 0 0 0-.75.75v2.25a.75.75 0 0 1-1.5 0V18Z" clip-rule="evenodd" />
+                        </svg>
+                        Vehicle Engineer
+                    </h3>
+                    <p class="text-gray-600">Lead the mechanical design, testing, and structural integrity of our lightweight, solar-assisted electric vehicle chassis and components.</p>
+                    <a href="#contact" class="mt-4 inline-block text-sm font-semibold text-green-600 hover:text-green-800 transition">Apply Now &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="mt-auto p-4 md:p-6 bg-white border-t border-gray-200 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
+            &copy; 2024 UrbanEV. Building sustainable, clean, and amazing long-term mobility.
+        </div>
+    </footer>
+</body>
+</html>
